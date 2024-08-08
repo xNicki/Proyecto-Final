@@ -1,6 +1,6 @@
 #include <iostream>
-#include <cstdlib>  // Para la función system()
-#include <ctime>    // Para la función time()
+#include <cstdlib>  // Para la funciÃ³n system()
+#include <ctime>    // Para la funciÃ³n time()
 #include <algorithm>
 
 using namespace std;
@@ -21,21 +21,21 @@ struct Jugador {
 Jugador jugadores[3];
 int numJugadores = 0;
 char eleccion;
-string palabras[] = {"carro", "mariposa", "ventilador", "corona", "fantasma", "gato", "aeropuerto", "universidad", "politecnico", "computacion"}; // Todas las palabras que se usarán aleatoriamente en el juego
+string palabras[] = {"carro", "mariposa", "ventilador", "corona", "fantasma", "gato", "aeropuerto", "universidad", "politecnico", "computacion"}; // Todas las palabras que se usarÃ¡n aleatoriamente en el juego
 string palabra;
 int numeroA;
 int vida;
 bool correcta, completa;
 
-// Función de comparación fuera de la función MostrarPuntajes
+// FunciÃ³n de comparaciÃ³n fuera de la funciÃ³n MostrarPuntajes
 bool CompararJugadores(const Jugador& a, const Jugador& b) {
     return a.puntaje > b.puntaje;
 }
 
-// Función que se ejecutará al seleccionar la opción 1
+// FunciÃ³n que se ejecutarÃ¡ al seleccionar la opciÃ³n 1
 void JugarPartida() {
     if (numJugadores >= 3) {
-        cout << "No se pueden agregar más jugadores." << endl;
+        cout << "No se pueden agregar mÃ¡s jugadores." << endl;
         return;
     }
 
@@ -44,10 +44,10 @@ void JugarPartida() {
     cin >> nombreJugador;
 
     srand((int)time(NULL));
-    numeroA = rand() % 10; // Escoje un número al azar del 0 al 9, cada número contiene una palabra
+    numeroA = rand() % 10; // Escoje un nÃºmero al azar del 0 al 9, cada nÃºmero contiene una palabra
 
     for (int i = 0; i < (int)palabras[numeroA].size(); i++) {
-        palabra += "-"; // Mide el número de letras que tiene la palabra escogida y por cada una agrega un guión
+        palabra += "-"; // Mide el nÃºmero de letras que tiene la palabra escogida y por cada una agrega un guiÃ³n
     }
 
     while (vida > 0) {
@@ -71,7 +71,7 @@ void JugarPartida() {
             vida--;
         }
 
-        // Comprueba si se llegó a completar la palabra 
+        // Comprueba si se llegÃ³ a completar la palabra 
         completa = true;
         for (int i = 0; i < (int)palabra.size(); i++) {
             if (palabra[i] == '-') {
@@ -107,7 +107,7 @@ void JugarPartida() {
     return;
 }
 
-// Función que se ejecutará al seleccionar la opción 2
+// FunciÃ³n que se ejecutarÃ¡ al seleccionar la opciÃ³n 2
 void MostrarPuntajes() {
     LimpiarPantalla();
     cout << "\t--- TABLA DE PUNTAJES ---" << endl;
@@ -121,18 +121,18 @@ void MostrarPuntajes() {
     cin >> eleccion;
 }
 
-// Función que se ejecutará al seleccionar la opción 4
+// FunciÃ³n que se ejecutarÃ¡ al seleccionar la opciÃ³n 4
 void MostrarCreditos() {
     LimpiarPantalla();
     cout << "\t--- CREDITOS ---" << endl;
     cout << "Juego hecho por:" << endl;
     cout << "1. Anahi Achote" << endl;
-    cout << "2. Mateo Campaña" << endl;
+    cout << "2. Mateo CampaÃ±a" << endl;
     cout << "Presione cualquier tecla para volver al menu: ";
     cin >> eleccion;
 }
 
-//Funcion que ejecutará el dibujo de el ahorcado dependiendo del numero de veces que el jugador se equivoque
+//Funcion que ejecutarÃ¡ el dibujo de el ahorcado dependiendo del numero de veces que el jugador se equivoque
 void Dibujar() {
     switch (vida) {
         case 6:
@@ -250,7 +250,7 @@ int main() {
                 MostrarCreditos();
                 break;
             default:
-                cout << "Opción no válida. Ingrese un numero del 1 al 4." << endl;
+                cout << "OpciÃ³n no vÃ¡lida. Ingrese un numero del 1 al 4." << endl;
                 break;
         }
     }
